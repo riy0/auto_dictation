@@ -15,6 +15,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass'
 gem 'bcrypt'
 gem 'gravtastic'
+gem 'faker'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
 
 
 group :development, :test do
