@@ -1,3 +1,9 @@
+<div class="field">
+  <textarea id="result_text" cols="100" rows="10"></textarea>
+  <label id="status"></label>
+</div>
+  <input type="button" onClick="vr_function();" value="音認開始">
+
 <script>
     var flag_speech = 0;
     function vr_function() {
@@ -32,33 +38,18 @@
                     var list = $("#voice-content li").text();
                     console.log(list);
                     document.getElementById('record_content').innerHTML = list;
+                    flag_speech = 0;
                     vr_function();
                 }
                 else
                 {
                     document.getElementById('result_text').innerHTML = "[途中経過] " + results[i][0].transcript;
-                    // console.log(results[i][0].transcript);
-                    // $('ul').append('<li>' + results[i][0].transcript +'</li>')
                     flag_speech = 1;
                 }
             }
-            // var list = $("#voice-content li").text();
-            // console.log(list);
-            // document.getElementById('#note-content').innerHTML = $("#voice-content li").text();
-        //     document.addEventListener("DOMContentLoaded", function(e){
-        //     var elm = document.querySelector("#note-content") || document.getElementById("note-content");
-        //     elm.innerHTML = $("#voice-content li").text();
-        // });
         }
         flag_speech = 0;
         document.getElementById('status').innerHTML = "start";
         recognition.start();
     }
 </script>
-
-
-<div class="field">
-  <textarea id="result_text" cols="100" rows="10"></textarea>
-  <textarea id="status" cols="100" rows="1" width=100 height=20></textarea>
-</div>
-  <input type="button" onClick="vr_function();" value="音認開始">

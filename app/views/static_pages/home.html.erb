@@ -10,9 +10,9 @@
           <%= render "shared/record_form" %>
         </section>
       </aside>
-      <ul id="voice-content">
-        <!-- ここにDOM操作でSpeechRecognitionの値が書かれる -->
-      </ul>
+      <div class="col-md-8">
+          <ul id="voice-content"> </ul>
+      </div>
       <%= render "shared/record_post" %>
     </div>
   <% else %>
